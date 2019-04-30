@@ -47,7 +47,7 @@ public interface Shape {
 ```
 
 ```java
-public interface TwoDimensionalShape extends Shape {
+import interfaces.Shape;public interface TwoDimensionalShape extends Shape {
     double getPerimeter();
     double getArea();
 }
@@ -92,7 +92,7 @@ Adding to your collection of shape-related classes, define a `Prism` class. Reme
 The `Prism` constructor should take a `TwoDimensionalShape` base, and a height. Define the following interface:
 
 ```java
-public interface ThreeDimensionalShape extends Shape {
+import interfaces.Shape;public interface ThreeDimensionalShape extends Shape {
     double getSurfaceArea();
     double getVolume();
     default String toString() { 

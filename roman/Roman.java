@@ -1,20 +1,19 @@
-package roman;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
-public class Main {
+public class Roman {
 
 
     public static void main(String[] args) throws IOException {
         List<String> romanNumeralsList = Files.readAllLines(Paths.get("roman/test.txt"));
 
         Map<String, Integer> romanMap =
-                romanNumeralsList.stream().collect(Collectors.toMap(x -> x, Main::convertRtoInt, (integer, integer2) -> integer));
+                romanNumeralsList.stream().collect(Collectors.toMap(x -> x, Roman::convertRtoInt, (integer, integer2) -> integer));
 
         romanMap.forEach((s, integer) -> {
             if (integer != 0) System.out.printf("Roman Numeral %s has a value of: %s. \n", s, integer);
